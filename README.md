@@ -1,2 +1,2 @@
-# Homir_fullstack_app
+# Homie_fullstack_app
 fullstack app
