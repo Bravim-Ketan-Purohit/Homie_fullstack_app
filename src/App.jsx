@@ -6,12 +6,14 @@ import ForgotPassword from "./pages/ForgotPassword";
 import SignIn from "./pages/SignIn";
 import SignOut from "./pages/SignOut";
 import Profile from "./pages/Profile";
+import Header from './components/Header';
 
 
 const App = () => {
   return (
     <div>
       <Router>
+      <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/offers" element={<Offers />} />
