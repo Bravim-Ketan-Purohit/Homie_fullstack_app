@@ -1,18 +1,27 @@
 import React, { useState } from "react";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import Oauth from "../components/Oauth";
 
-const ForgotPassword = () => {
+const SignUp = () => {
+  const [showPassword, setShowPassword] = useState(false);
 
-  const [email, setEmail] = useState("")
+  const [formData, setFormData] = useState({
+    name:'',
+    email: "",
+    password: "",
+  });
+  const { name,email, password } = formData;
   // --------------------------------
   const handleChange = (event) => {
-    setEmail (event.target.value)
-  }
-  
+    setFormData((prevState) => ({
+      ...prevState,
+      [event.target.id]: event.target.value,
+    }));
+  };
   return (
     <section>
-      <h1 className="text-3xl text-center mt-6 font-bold">Forgot sPassword</h1>
+      <h1 className="text-3xl text-center mt-6 font-bold">Sign Up</h1>
       <div className="flex justify-center flex-wrap items-center px-6 py-12 max-w-6xl mx-auto">
         {/* //this div for image 👇 */}
         <div className="md:w-[67%] lg:w-[50%] mb-12 md:mb-6">
@@ -27,30 +36,58 @@ const ForgotPassword = () => {
           <form>
             <input
               className="mb-6 w-full px-4 py-2 text-xl text-gray-700 bg-white border-gray-300 rounded transition ease-in-out"
+              type="text"
+              id="name"
+              value={name}
+              onChange={handleChange}
+              placeholder="Full Name"
+            />
+            <input
+              className="mb-6 w-full px-4 py-2 text-xl text-gray-700 bg-white border-gray-300 rounded transition ease-in-out"
               type="email"
               id="email"
               value={email}
               onChange={handleChange}
               placeholder="Email address"
             />
-            
+            <div className="relative">
+              <input
+                className="mb-6 w-full px-4 py-2 text-xl text-gray-700 bg-white border-gray-300 rounded transition ease-in-out"
+                type={showPassword ? "text" : "password"}
+                id="password"
+                value={password}
+                onChange={handleChange}
+                placeholder="Password"
+              />
+              {showPassword ? (
+                <AiFillEyeInvisible
+                  className="absolute right-3 top-3 text-xl cursor-pointer"
+                  onClick={() => setShowPassword((prevState) => !prevState)}
+                />
+              ) : (
+                <AiFillEye
+                  className="absolute right-3 top-3 text-xl cursor-pointer"
+                  onClick={() => setShowPassword((prevState) => !prevState)}
+                />
+              )}
+            </div>
             <div className="flex justify-between whitespace-nowrap text-small sm:text-lg ">
               <p className="mb-6 ">
-                Dont have an account?
+                Have an account?
                 <Link
-                  to={"/sign-up"}
+                  to={"/sign-In"}
                   className="text-red-500 hover:text-red-700 transition duration-200 ease-in-out"
                 >
                   {" "}
-                  Register
+                  sign in
                 </Link>
               </p>
               <p>
                 <Link
-                  to={"/sign-In"}
+                  to={"/forgot-password"}
                   className="text-blue-500 hover:text-blue-700 transition duration-200 ease-in-out"
                 >
-                  Sign in
+                  Forgot password?
                 </Link>
               </p>
             </div>
@@ -59,7 +96,7 @@ const ForgotPassword = () => {
               className="w-full bg-blue-600 text-white px-7 py-3 text-sm font-medium uppercase rounded shadow-md hover:bg-blue-700 transition duration-150 ease-in-out hover:shadow-lg active:bg-blue-800"
               type="submit"
             >
-              Send Reset Password
+              Sign-Up
             </button>
             <div className="my-6">
               <p className="text-center font-semibold mx-4">OR</p>
@@ -72,4 +109,4 @@ const ForgotPassword = () => {
   );
 };
 
-export default ForgotPassword;
+export default SignUp;
