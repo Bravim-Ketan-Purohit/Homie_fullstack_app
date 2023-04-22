@@ -8,13 +8,15 @@ import SignIn from "./pages/SignIn";
 import Profile from "./pages/Profile";
 import Header from './components/Header';
 import SignUp from './pages/SignUp';
+import { ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 
 const App = () => {
   return (
     <div>
       <Router>
-      <Header />
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/offers" element={<Offers />} />
@@ -24,6 +26,16 @@ const App = () => {
           <Route path="/profile" element={<Profile />} />
         </Routes>
       </Router>
+      <ToastContainer
+        position="top-center"
+        autoClose={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable
+        theme="dark"
+      />
     </div>
   );
 }

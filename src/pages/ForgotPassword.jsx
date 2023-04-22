@@ -16,7 +16,7 @@ const ForgotPassword = () => {
       <div className="flex justify-center flex-wrap items-center px-6 py-12 max-w-6xl mx-auto">
         {/* //this div for image 👇 */}
         <div className="md:w-[67%] lg:w-[50%] mb-12 md:mb-6">
-          <img
+          <img 
             src="https://images.unsplash.com/flagged/photo-1564767609342-620cb19b2357?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aG91c2UlMjBrZXlzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
             alt="key"
             className="w-full rounded-2xl"
