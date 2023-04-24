@@ -20,8 +20,8 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path='/Profile' element={<PrivateRoute/>}>
-            <Route path='/Profile' element={<Profile/>}></Route>
+          <Route path="/Profile" element={<PrivateRoute />}>
+            <Route path="/Profile" element={<Profile />}></Route>
           </Route>
           <Route path="/offers" element={<Offers />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
@@ -32,12 +32,14 @@ const App = () => {
       </Router>
       <ToastContainer
         position="top-center"
-        autoClose={false}
-        newestOnTop
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop={false}
         closeOnClick
         rtl={false}
-        pauseOnFocusLoss={false}
+        pauseOnFocusLoss
         draggable
+        pauseOnHover
         theme="dark"
       />
     </div>
