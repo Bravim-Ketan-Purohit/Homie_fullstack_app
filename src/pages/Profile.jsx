@@ -61,7 +61,7 @@ const Profile = () => {
               disabled={!changeDetail}
               onChange={onChange}
               className={`w-full mb-6 px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded transition duration-150 ease-in-out ${
-                changeDetail && "bg-red-200 focus:bg-red-200"
+                changeDetail && "!bg-red-200 focus:bg-red-200"
               }`}
             />
             {/* email input👇 */}
