@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Offers from './pages/Offers'
 import ForgotPassword from "./pages/ForgotPassword";
 import SignIn from "./pages/SignIn";
+import CreateListing from './pages/CreateListing';
 // import SignOut from "./pages/SignOut";
 import Profile from "./pages/Profile";
 import Header from './components/Header';
@@ -27,7 +28,8 @@ const App = () => {
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/create-listing" element={<CreateListing />} />
+          <Route path="/" element={<Profile />} />
         </Routes>
       </Router>
       <ToastContainer
