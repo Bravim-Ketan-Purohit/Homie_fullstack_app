@@ -159,7 +159,7 @@ async function onSubmit(e) {
      [...images]
        .map((image) => storeImage(image)))
        .catch((error) => {
-         loading(false);
+         setLoading(false);
          toast.error("image not uploaded");
          return;
        }
@@ -170,6 +170,7 @@ async function onSubmit(e) {
     imgUrls,
     geolocation,
     timestamp:serverTimestamp(),
+    userRef:auth.currentUser.uid
    }
    delete formDataCopy.images;
    !formDataCopy.offer && delete formDataCopy.discountedPrice;
