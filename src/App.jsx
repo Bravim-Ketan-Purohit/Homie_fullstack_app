@@ -24,17 +24,19 @@ const App = () => {
           <Route path="/Profile" element={<PrivateRoute />}>
             <Route path="/Profile" element={<Profile />}></Route>
           </Route>
-          <Route path="/offers" element={<Offers />} />
+          <Route path="/offers" element={<Offers />} /> 
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />
-          <Route path="/create-listing" element={<CreateListing />} />
+          <Route path="/create-listing" element={<PrivateRoute />}>
+            <Route path="/create-listing" element={<CreateListing />} />
+          </Route>
           <Route path="/" element={<Profile />} />
         </Routes>
       </Router>
       <ToastContainer
         position="top-center"
-        autoClose={1000}
+        autoClose={3000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
