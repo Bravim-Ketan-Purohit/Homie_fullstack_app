@@ -6,7 +6,7 @@ import {
   ref,
   uploadBytesResumable,
   getDownloadURL,
-} from "firebase/storage"; 
+} from "firebase/storage";
 import { getAuth } from "firebase/auth";
 import { v4 as uuidv4 } from "uuid";
 import {
