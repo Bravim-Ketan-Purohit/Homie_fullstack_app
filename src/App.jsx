@@ -5,7 +5,7 @@ import Offers from './pages/Offers'
 import ForgotPassword from "./pages/ForgotPassword";
 import SignIn from "./pages/SignIn";
 import CreateListing from './pages/CreateListing';
-
+import Category from "./pages/Category";
 import Profile from "./pages/Profile";
 import Header from './components/Header';
 import SignUp from './pages/SignUp';
@@ -27,7 +27,11 @@ const App = () => {
             <Route path="/Profile" element={<Profile />}></Route>
           </Route>
           <Route path="/offers" element={<Offers />} />
-          <Route path="/category/:categoryName/:listingID" element={<Listing />} />
+          <Route path="/category/:categoryName" element={<Category />} />
+          <Route
+            path="/category/:categoryName/:listingID"
+            element={<Listing />}
+          />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />
