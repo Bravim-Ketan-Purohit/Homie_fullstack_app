@@ -54,14 +54,14 @@ export default function Header() {
               Home
             </li>
 
-            <li
+            {/* <li
               className={`cursor-pointer p-3 text-sm font-semibold border-b-transparent text-gray-400 border-b-[3px] ${
                 pathmatch("/Offers") && "!text-black !border-b-red-500"
               }`}
               onClick={() => navigate("/Offers")}
             >
               Offers
-            </li>
+            </li> */}
 
             <li
               className={`cursor-pointer p-3 text-sm font-semibold text-gray-400 border-b-[3px] border-b-transparent ${
