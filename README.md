@@ -15,11 +15,6 @@ Introducing my groundbreaking real estate project, equipped with a cutting-edge 
 - Delete or Edit your listing
 - Simple and interactive Ui
 
-## Demo
-
-
-
-https://homie-fullstack-app.vercel.app/
 
 
 
